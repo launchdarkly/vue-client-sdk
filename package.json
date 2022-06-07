@@ -1,0 +1,44 @@
+{
+  "name": "launchdarkly-vue-client-sdk",
+  "version": "1.0.0",
+  "description": "LaunchDarkly Client-side SDK for VueJS",
+  "main": "./dist/launchdarkly-vue-client-sdk.umd.js",
+  "exports": {
+    "import": "./dist/launchdarkly-vue-client-sdk.es.js",
+    "require": "./dist/launchdarkly-vue-client-sdk.umd.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "vite build",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/launchdarkly/vue-client-sdk-private.git"
+  },
+  "author": "LaunchDarkly <team@launchdarkly.com>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "launchdarkly",
+    "launch",
+    "darkly",
+    "vue",
+    "vuejs",
+    "sdk",
+    "bindings"
+  ],
+  "bugs": {
+    "url": "https://github.com/launchdarkly/vue-client-sdk-private/issues"
+  },
+  "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
+  "dependencies": {
+    "launchdarkly-js-client-sdk": "^2.22.1",
+    "vue": "^3.2.36"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/tsconfig": "^0.1.3",
+    "tslint": "^6.1.3",
+    "vite": "^2.9.9"
+  }
+}
