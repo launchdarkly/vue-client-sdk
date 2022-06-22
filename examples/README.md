@@ -1,6 +1,6 @@
 # LaunchDarkly sample Vue application
 
-We've built a application that demonstrates how LaunchDarkly's Vue SDK works.
+We've built an application that demonstrates how LaunchDarkly's Vue SDK works.
 
 Below, you'll find the basic build procedure. For more comprehensive instructions, you can visit the [Vue reference guide](https://docs.launchdarkly.com/sdk/client-side/vue).
 
