@@ -33,7 +33,7 @@ export const LDPlugin = {
 
       const $ldClient = initialize(clientSideID, user, options)
       app.provide(LD_CLIENT, $ldClient)
-      const enableStreaming = pluginOptions.streaming === false ? false : true
+      const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
       app.provide(LD_FLAG, getFlagRef($ldReady, $ldClient, enableStreaming))
       $ldClient.on('ready', () => $ldReady.value = true)
     }
