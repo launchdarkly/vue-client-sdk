@@ -5,6 +5,7 @@ import getFlagRef, { type FlagRef } from './getFlagRef'
 type LDInitOptions = {
   clientSideID?: string | undefined
   user?: LDUser | undefined
+  streaming?: boolean
   options?: LDOptions | undefined
 }
 
@@ -32,7 +33,8 @@ export const LDPlugin = {
 
       const $ldClient = initialize(clientSideID, user, options)
       app.provide(LD_CLIENT, $ldClient)
-      app.provide(LD_FLAG, getFlagRef($ldReady, $ldClient))
+      const enableStreaming = pluginOptions.streaming === false ? false : true
+      app.provide(LD_FLAG, getFlagRef($ldReady, $ldClient, enableStreaming))
       $ldClient.on('ready', () => $ldReady.value = true)
     }
     app.provide(LD_READY, readonly($ldReady))
