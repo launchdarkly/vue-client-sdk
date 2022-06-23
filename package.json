@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "vite build",
+    "build": "vue-tsc --declaration --emitDeclarationOnly && vite build",
     "start": "vite"
   },
   "repository": {
@@ -33,7 +33,8 @@
   "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
   "dependencies": {
     "launchdarkly-js-client-sdk": "^2.22.1",
-    "vue": "^3.2.36"
+    "vue": "^3.2.36",
+    "vue-tsc": "^0.37.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",

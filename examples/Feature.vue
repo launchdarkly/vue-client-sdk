@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import { inject } from 'vue'
-  import { ldReadyKey, ldFlagKey } from '../lib'
+  import { LD_READY, LD_FLAG } from '../lib'
 
   const featureFlagKey = 'my-boolean-flag'
   const myDefaultFlagValue = 'unknown'
-  const $ldReady = inject(ldReadyKey)
-  const $ldFlag = inject(ldFlagKey)
-  const myFlagValue = $ldFlag(featureFlagKey, myDefaultFlagValue)
+  const $ldReady = inject(LD_READY)
+  const $ldFlag = inject(LD_FLAG)
+  const myFlagValue = $ldFlag && $ldFlag(featureFlagKey, myDefaultFlagValue)
 </script>
 
 <template>

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <button @click="show = !show">Toggle</button>
+  <button @click="show = !show">Show/Hide</button>
   <div v-if="show">
     <Feature />
   </div>
