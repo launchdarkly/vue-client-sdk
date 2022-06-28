@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { LDPlugin } from '../lib'
+import { LDPlugin } from '../src'
 
 // Set clientSideID to your LaunchDarkly client-side ID
 const clientSideID = ''

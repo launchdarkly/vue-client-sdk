@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { inject } from 'vue'
-  import { LD_READY, LD_FLAG } from '../lib'
+  import { LD_READY, LD_FLAG } from '../src'
 
   const featureFlagKey = 'my-boolean-flag'
   const myDefaultFlagValue = 'unknown'

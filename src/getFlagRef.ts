@@ -11,7 +11,7 @@ export default function ($ldReady: Readonly<Ref<boolean>>, $ldClient: LDClient, 
       return readonly(flagRef)
     }
 
-    const updateFlagRef = (newFlagValue: unknown) => flagRef.value = newFlagValue
+    const updateFlagRef = (newFlagValue: unknown) => (flagRef.value = newFlagValue)
     $ldClient.on(`change:${flagKey}`, updateFlagRef)
     onBeforeUnmount(() => $ldClient.off(`change:${flagKey}`, updateFlagRef))
     if (!$ldReady.value) {

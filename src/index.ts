@@ -36,7 +36,7 @@ export const LDPlugin = {
       app.provide(LD_CLIENT, $ldClient)
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
       app.provide(LD_FLAG, getFlagRef($ldReady, $ldClient, enableStreaming))
-      $ldClient.on('ready', () => $ldReady.value = true)
+      $ldClient.on('ready', () => ($ldReady.value = true))
     }
     app.provide(LD_READY, readonly($ldReady))
     if (pluginOptions.deferInitialization) {
@@ -46,5 +46,5 @@ export const LDPlugin = {
     } else {
       $ldInit(pluginOptions)
     }
-  }
+  },
 }
