@@ -35,8 +35,7 @@
   },
   "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
   "dependencies": {
-    "launchdarkly-js-client-sdk": "^2.22.1",
-    "vue": "^3.2.36"
+    "launchdarkly-js-client-sdk": "^2.22.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.0",
@@ -48,5 +47,8 @@
     "typescript": "^4.7.4",
     "vite": "^2.9.9",
     "vue-tsc": "^0.38.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.36"
   }
 }
