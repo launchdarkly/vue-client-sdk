@@ -6,6 +6,7 @@ type LDInitOptions = {
   clientSideID?: string | undefined
   user?: LDUser | undefined
   streaming?: boolean
+  deferInitialization?: boolean
   options?: LDOptions | undefined
 }
 
@@ -21,7 +22,7 @@ export const LDPlugin = {
     const $ldReady = ref(false)
     const $ldInit = (initOptions: LDInitOptions) => {
       const clientSideID = initOptions.clientSideID ?? pluginOptions.clientSideID
-      const user = initOptions.user ?? pluginOptions.user
+      const user = initOptions.user ?? pluginOptions.user ?? { anonymous: true }
       const options = initOptions.options ?? pluginOptions.options
 
       if (clientSideID === undefined || user === undefined) {
@@ -38,10 +39,12 @@ export const LDPlugin = {
       $ldClient.on('ready', () => $ldReady.value = true)
     }
     app.provide(LD_READY, readonly($ldReady))
-    if (pluginOptions.clientSideID && pluginOptions.user) {
-      $ldInit(pluginOptions)
-    } else {
+    if (pluginOptions.deferInitialization) {
       app.provide(LD_INIT, $ldInit)
+    } else if (!pluginOptions.clientSideID) {
+      throw new Error('LaunchDarkly plugin requires a clientSideID unless deferInitialization option is used')
+    } else {
+      $ldInit(pluginOptions)
     }
   }
 }
