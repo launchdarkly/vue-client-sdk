@@ -1,7 +1,7 @@
 import { initialize, type LDClient, type LDUser, type LDOptions } from 'launchdarkly-js-client-sdk'
 import { readonly, ref, type InjectionKey, type Ref, type App } from 'vue'
 import getFlagRef, { type FlagRef } from './getFlagRef'
-export { useFlag } from './useFlag'
+export { useIsLdReady, useLdFlag, useLdInit, useLdClient } from './hooks'
 
 type LDInitOptions = {
   clientSideID?: string | undefined
@@ -23,16 +23,11 @@ export const LDPlugin = {
     const $ldReady = ref(false)
     const $ldInit = (initOptions: LDInitOptions) => {
       const clientSideID = initOptions.clientSideID ?? pluginOptions.clientSideID
+      if (clientSideID === undefined) {
+        throw new Error(`Cannot initialize LaunchDarkly without a clientSideID`)
+      }
       const user = initOptions.user ?? pluginOptions.user ?? { anonymous: true }
       const options = initOptions.options ?? pluginOptions.options
-
-      if (clientSideID === undefined || user === undefined) {
-        const errMessages: string[] = []
-        if (clientSideID === undefined) errMessages.push('clientSideID is undefined')
-        if (user === undefined) errMessages.push('user is undefined')
-        throw new Error(`Cannot initialize LaunchDarkly: ${errMessages.join(', ')}`)
-      }
-
       const $ldClient = initialize(clientSideID, user, options)
       app.provide(LD_CLIENT, $ldClient)
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
