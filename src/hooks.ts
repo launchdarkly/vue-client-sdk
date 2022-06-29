@@ -15,7 +15,4 @@ export const useLdClient = () => safeInject(LD_CLIENT, 'LD_CLIENT')
 
 export const useLdInit = () => safeInject(LD_INIT, 'LD_INIT')
 
-export const useLdFlag = <T>(flagKey: string, defaultValue?: T) => {
-  const $ldFlag = safeInject(LD_FLAG, 'LD_FLAG')
-  return $ldFlag(flagKey, defaultValue)
-}
+export const useLdFlag = <T>(flagKey: string, defaultValue?: T) => safeInject(LD_FLAG, 'LD_FLAG')(flagKey, defaultValue)
