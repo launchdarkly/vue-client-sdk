@@ -1,5 +1,5 @@
 import { inject, readonly, ref } from 'vue'
-import { useIsLdReady, useLdClient, useLdInit, useLdFlag } from '.'
+import { useLdReady, useLdClient, useLdInit, useLdFlag } from '.'
 
 jest.mock('vue', () => ({
   ...jest.requireActual('vue'),
@@ -9,8 +9,8 @@ jest.mock('vue', () => ({
 const injectMocked = <jest.Mock<typeof inject>>inject
 
 describe('when plugin has not been loaded', () => {
-  test('useIsLdReady blows up', () => {
-    expect(useIsLdReady).toThrowErrorMatchingInlineSnapshot(
+  test('useLdReady blows up', () => {
+    expect(useLdReady).toThrowErrorMatchingInlineSnapshot(
       `"Injection of LD_READY failed. LaunchDarkly plugin may not have been loaded."`,
     )
   })
@@ -37,7 +37,7 @@ describe('when plugin has not been loaded', () => {
 test('safeInject returns injectee', () => {
   injectMocked.mockImplementationOnce((() => readonly(ref(true))) as jest.Mock)
 
-  const result = useIsLdReady()
+  const result = useLdReady()
 
   expect(result.value).toBe(true)
 })

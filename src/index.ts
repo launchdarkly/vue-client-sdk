@@ -1,7 +1,7 @@
 import { initialize, type LDClient, type LDUser, type LDOptions } from 'launchdarkly-js-client-sdk'
 import { readonly, ref, type InjectionKey, type Ref, type App } from 'vue'
 import { getLdFlag, type FlagRef } from './getLdFlag'
-export { useIsLdReady, useLdFlag, useLdInit, useLdClient } from './hooks'
+export { useLdReady, useLdFlag, useLdInit, useLdClient } from './hooks'
 
 type LDInitOptions = {
   clientSideID?: string | undefined

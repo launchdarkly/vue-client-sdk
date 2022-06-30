@@ -9,7 +9,7 @@ const safeInject = <T>(key: InjectionKey<T>, label: string): T => {
   return target
 }
 
-export const useIsLdReady = () => safeInject(LD_READY, 'LD_READY')
+export const useLdReady = () => safeInject(LD_READY, 'LD_READY')
 
 export const useLdClient = () => safeInject(LD_CLIENT, 'LD_CLIENT')
 
