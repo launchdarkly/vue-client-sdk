@@ -1,5 +1,5 @@
 import { inject, readonly, ref } from 'vue'
-import { useLdReady, useLdClient, useLdInit, useLdFlag } from '.'
+import { useLdReady, useLdClient, ldInit, useLdFlag } from '.'
 
 jest.mock('vue', () => ({
   ...jest.requireActual('vue'),
@@ -21,8 +21,8 @@ describe('when plugin has not been loaded', () => {
     )
   })
 
-  test('useLdInit blows up', () => {
-    expect(useLdInit).toThrowErrorMatchingInlineSnapshot(
+  test('ldInit blows up', () => {
+    expect(ldInit).toThrowErrorMatchingInlineSnapshot(
       `"Injection of LD_INIT failed. LaunchDarkly plugin may not have been loaded."`,
     )
   })
