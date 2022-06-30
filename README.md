@@ -48,4 +48,4 @@ We encourage pull requests and other contributions from the community. Check out
 
 ## Development
 
-To run locally, clone this repository and run `npm i` and `npm start`. Run unit tests with `npm test` and lint with `npm run lint`.
+To run locally, clone this repository and run `npm i` then `npm start`. Run unit tests with `npm test` and lint with `npm run lint`.
