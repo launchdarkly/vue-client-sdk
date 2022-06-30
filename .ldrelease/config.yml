@@ -6,8 +6,11 @@ publications:
   - url: https://www.npmjs.com/package/launchdarkly-vue-client-sdk
     description: npm
 
-template:
-  name: npm
+jobs:
+  - docker:
+      image: node:16.15.1-buster
+    template:
+      name: npm
 
 documentation:
   githubPages: true
