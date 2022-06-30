@@ -1,8 +1,0 @@
-{
-  "out": "docs",
-  "exclude": ["**/node_modules/**"],
-  "name": "LaunchDarkly Vue SDK (1.0.0)",
-  "readme": "none",
-  "entryPoints": "src/index.ts",
-  "entryPointStrategy": "expand"
-}

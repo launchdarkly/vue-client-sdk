@@ -17,8 +17,7 @@
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "start": "vite",
     "lint": "npx eslint src",
-    "check-typescript": "vue-tsc --noEmit",
-    "docs": "npx typedoc"
+    "check-typescript": "vue-tsc --noEmit"
   },
   "repository": {
     "type": "git",
