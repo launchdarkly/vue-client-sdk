@@ -4,6 +4,10 @@
   "description": "LaunchDarkly Client-side SDK for VueJS",
   "main": "./dist/launchdarkly-vue-client-sdk.umd.js",
   "types": "./dist/index.d.ts",
+  "engines": {
+    "npm": ">=8.11.0",
+    "node": ">=16.15.1"
+  },
   "exports": {
     "import": "./dist/launchdarkly-vue-client-sdk.es.js",
     "require": "./dist/launchdarkly-vue-client-sdk.umd.js"
