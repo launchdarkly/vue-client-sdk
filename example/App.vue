@@ -1,10 +1,18 @@
 <script setup lang="ts">
-import { useLdReady, useLdFlag } from '../src'
+import { ldInit, useLdFlag } from '../src'
 
+// Set clientSideID to your LaunchDarkly client-side ID
+const clientSideID = ''
+// Set up the user properties. This user should appear on your LaunchDarkly
+// users dashboard soon after you run the demo.
+const user = { key: 'example-user-key', name: 'Sandy' }
 // Set featureFlagKey to the feature flag key you want to evaluate
 const featureFlagKey = 'my-boolean-flag'
 
-const ldReady = useLdReady()
+if (!clientSideID) {
+  console.warn('Please edit App.vue to set clientSideID to your LaunchDarkly client-side ID')
+}
+const [_ldClient, ldReady] = ldInit({ clientSideID, user })
 const flagValue = useLdFlag(featureFlagKey, false /* default flag value */)
 </script>
 

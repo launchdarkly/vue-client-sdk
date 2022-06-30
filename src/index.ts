@@ -67,7 +67,7 @@ export const LDPlugin = {
     const $ldReady = readonly(ldReady)
     const $ldInit = (initOptions: LDPluginOptions = {}): [LDClient, Readonly<Ref<boolean>>] => {
       const clientSideID = initOptions.clientSideID ?? pluginOptions.clientSideID
-      if (clientSideID === undefined) {
+      if (!clientSideID) {
         throw new Error(`Cannot initialize LaunchDarkly without a clientSideID`)
       }
       const user = initOptions.user ?? pluginOptions.user ?? { anonymous: true }
