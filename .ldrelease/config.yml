@@ -1,3 +1,5 @@
+version: 2
+
 repo:
   public: vue-client-sdk
   private: vue-client-sdk-private
@@ -17,4 +19,4 @@ documentation:
   title: LaunchDarkly Vue SDK
 
 sdk:
-  displayName: "Vue"
+  displayName: Vue
