@@ -15,7 +15,7 @@ const safeInject = <T>(key: InjectionKey<T>, label: string): T => {
  *
  * @return Readonly boolean reference indicating if the LaunchDarkly client has finished initializing.
  */
-export function useLdReady() {
+export function useLDReady() {
   return safeInject(LD_READY, 'LD_READY')
 }
 
@@ -24,7 +24,7 @@ export function useLdReady() {
  * {@link https://launchdarkly.github.io/js-client-sdk/interfaces/_launchdarkly_js_client_sdk_.ldclient.html}.
  * Uses Vue's inject API, and will only work if run inside a Vue setup hook or `<script setup>`.
  */
-export function useLdClient() {
+export function useLDClient() {
   return safeInject(LD_CLIENT, 'LD_CLIENT')
 }
 
@@ -37,7 +37,7 @@ export function ldInit(initOptions: LDPluginOptions) {
 }
 
 /**
- * Evaluates a single feature flag. Automatically subsciribes to streamed updates
+ * Evaluates a single feature flag. Automatically subscribes to streamed updates
  * unless the `streaming` option was set to false.
  * Uses Vue's inject API, so will only work if run inside a Vue setup hook or `<script setup>`.
  *
@@ -47,6 +47,6 @@ export function ldInit(initOptions: LDPluginOptions) {
  *
  * @return Readonly ref to the flag's value.
  */
-export function useLdFlag<T>(flagKey: string, defaultValue?: T) {
+export function useLDFlag<T>(flagKey: string, defaultValue?: T) {
   return safeInject(LD_FLAG, 'LD_FLAG')(flagKey, defaultValue)
 }
