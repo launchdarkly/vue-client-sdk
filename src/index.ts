@@ -15,13 +15,13 @@ export type LDPluginOptions = {
    */
   user?: LDUser | undefined
   /**
-   * Use to disable automatically subscribing to live updates to flags referenced using {@link useLdFlag}.
+   * Enables or disables automatically subscribing to live updates to flags referenced using {@link useLdFlag}.
    *
    * @defaultValue `true`
    */
   streaming?: boolean
   /**
-   * Use to defer initialization of the LaunchDarkly client until {@link ldInit} is called explicitly.
+   * Defers initialization of the LaunchDarkly client until {@link ldInit} is called explicitly.
    *
    * @defaultValue `false`
    */
@@ -38,7 +38,7 @@ export type LDPluginOptions = {
  */
 export const LD_INIT = Symbol() as InjectionKey<(o?: LDPluginOptions) => [LDClient, Readonly<Ref<boolean>>]>
 /**
- * Injection key used to retreive a boolean ref indicating if the LaunchDarkly client has finirshed initializing.
+ * Injection key used to retreive a boolean ref indicating if the LaunchDarkly client has finished initializing.
  * Usage: `const ldReady = inject(LD_READY)`.
  * Alternatively use {@link useLdReady}.
  */
@@ -55,7 +55,7 @@ export const LD_CLIENT = Symbol() as InjectionKey<LDClient>
 export const LD_FLAG = Symbol() as InjectionKey<<T>(flagKey: string, defaultFlagValue?: T | undefined) => FlagRef<T>>
 
 /**
- * Vue plugin wrapper for the LaunchDarkly javascript SDK.
+ * Vue plugin wrapper for the LaunchDarkly JavaScript SDK.
  *
  * If provided with a clientSideID will initialize the LaunchDarkly client automatically (unless `deferInitialization` is true).
  *
