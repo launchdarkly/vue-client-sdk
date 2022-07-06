@@ -36,7 +36,7 @@ export type LDPluginOptions = {
  * Injection key used to retreive LaunchDarkly client initialization function. Usage: `const ldInit = inject(LD_INIT)`.
  * Alternatively use {@link ldInit}.
  */
-export const LD_INIT = Symbol() as InjectionKey<(o?: LDPluginOptions) => [LDClient, Readonly<Ref<boolean>>]>
+export const LD_INIT = Symbol() as InjectionKey<(o?: LDPluginOptions) => [Readonly<Ref<boolean>>, LDClient]>
 /**
  * Injection key used to retreive a boolean ref indicating if the LaunchDarkly client has finished initializing.
  * Usage: `const ldReady = inject(LD_READY)`.
@@ -65,7 +65,7 @@ export const LDPlugin = {
   install(app: App, pluginOptions: LDPluginOptions = {}) {
     const ldReady = ref(false)
     const $ldReady = readonly(ldReady)
-    const $ldInit = (initOptions: LDPluginOptions = {}): [LDClient, Readonly<Ref<boolean>>] => {
+    const $ldInit = (initOptions: LDPluginOptions = {}): [Readonly<Ref<boolean>>, LDClient] => {
       const clientSideID = initOptions.clientSideID ?? pluginOptions.clientSideID
       if (!clientSideID) {
         throw new Error(`Cannot initialize LaunchDarkly without a clientSideID`)
@@ -77,7 +77,7 @@ export const LDPlugin = {
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
       app.provide(LD_FLAG, getLdFlag(ldReady.value, $ldClient, enableStreaming))
       $ldClient.on('ready', () => (ldReady.value = true))
-      return [$ldClient, $ldReady]
+      return [$ldReady, $ldClient]
     }
     app.provide(LD_READY, $ldReady)
     if (pluginOptions.deferInitialization) {
