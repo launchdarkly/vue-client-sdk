@@ -44,12 +44,12 @@ export const LD_INIT = Symbol() as InjectionKey<(o?: LDPluginOptions) => [Readon
  */
 export const LD_READY = Symbol() as InjectionKey<Readonly<Ref<boolean>>>
 /**
- * Injection key used to retreive LaunchDarkly client. Usage: `const ldclient = inject(LD_CLIENT)`.
+ * Injection key used to retrieve LaunchDarkly client. Usage: `const ldClient = inject(LD_CLIENT)`.
  * Alternatively use {@link useLDClient}.
  */
 export const LD_CLIENT = Symbol() as InjectionKey<LDClient>
 /**
- * Injection key used to retreive `ldFlag` function. Usage: `const ldFlag = inject(LD_FLAG)`.
+ * Injection key used to retrieve `ldFlag` function. Usage: `const ldFlag = inject(LD_FLAG)`.
  * Alternatively use {@link useLDFlag}.
  */
 export const LD_FLAG = Symbol() as InjectionKey<<T>(flagKey: string, defaultFlagValue?: T | undefined) => FlagRef<T>>
