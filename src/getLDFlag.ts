@@ -3,7 +3,7 @@ import type { LDClient } from 'launchdarkly-js-client-sdk'
 
 export type FlagRef<T> = Readonly<Ref<T>>
 
-export const getLdFlag = (isLdReady: boolean, $ldClient: LDClient, enableStreaming = true) => {
+export const getLDFlag = (isLdReady: boolean, $ldClient: LDClient, enableStreaming = true) => {
   return function ldFlag<T>(flagKey: string, defaultFlagValue?: T): FlagRef<T> {
     const flagValue = isLdReady ? $ldClient.variation(flagKey, defaultFlagValue) : defaultFlagValue
     const flagRef = ref(flagValue)

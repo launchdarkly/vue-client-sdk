@@ -1,7 +1,7 @@
 import { initialize, type LDClient, type LDUser, type LDOptions } from 'launchdarkly-js-client-sdk'
 import { readonly, ref, type InjectionKey, type Ref, type App } from 'vue'
-import { getLdFlag, type FlagRef } from './getLdFlag'
-export { useLdReady, useLdFlag, ldInit, useLdClient } from './hooks'
+import { getLDFlag, type FlagRef } from './getLDFlag'
+export { useLDReady, useLDFlag, ldInit, useLDClient } from './hooks'
 
 export type LDPluginOptions = {
   /**
@@ -15,7 +15,7 @@ export type LDPluginOptions = {
    */
   user?: LDUser | undefined
   /**
-   * Enables or disables automatically subscribing to live updates to flags referenced using {@link useLdFlag}.
+   * Enables or disables automatically subscribing to live updates to flags referenced using {@link useLDFlag}.
    *
    * @defaultValue `true`
    */
@@ -38,19 +38,19 @@ export type LDPluginOptions = {
  */
 export const LD_INIT = Symbol() as InjectionKey<(o?: LDPluginOptions) => [Readonly<Ref<boolean>>, LDClient]>
 /**
- * Injection key used to retreive a boolean ref indicating if the LaunchDarkly client has finished initializing.
+ * Injection key used to retrieve a boolean ref indicating if the LaunchDarkly client has finished initializing.
  * Usage: `const ldReady = inject(LD_READY)`.
- * Alternatively use {@link useLdReady}.
+ * Alternatively use {@link useLDReady}.
  */
 export const LD_READY = Symbol() as InjectionKey<Readonly<Ref<boolean>>>
 /**
- * Injection key used to retreive LaunchDarkly client. Usage: `const ldclient = inject(LD_CLIENT)`.
- * Alternatively use {@link useLdClient}.
+ * Injection key used to retrieve LaunchDarkly client. Usage: `const ldClient = inject(LD_CLIENT)`.
+ * Alternatively use {@link useLDClient}.
  */
 export const LD_CLIENT = Symbol() as InjectionKey<LDClient>
 /**
- * Injection key used to retreive `ldFlag` function. Usage: `const ldFlag = inject(LD_FLAG)`.
- * Alternatively use {@link useLdFlag}.
+ * Injection key used to retrieve `ldFlag` function. Usage: `const ldFlag = inject(LD_FLAG)`.
+ * Alternatively use {@link useLDFlag}.
  */
 export const LD_FLAG = Symbol() as InjectionKey<<T>(flagKey: string, defaultFlagValue?: T | undefined) => FlagRef<T>>
 
@@ -75,7 +75,7 @@ export const LDPlugin = {
       const $ldClient = initialize(clientSideID, user, options)
       app.provide(LD_CLIENT, $ldClient)
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
-      app.provide(LD_FLAG, getLdFlag(ldReady.value, $ldClient, enableStreaming))
+      app.provide(LD_FLAG, getLDFlag(ldReady.value, $ldClient, enableStreaming))
       $ldClient.on('ready', () => (ldReady.value = true))
       return [$ldReady, $ldClient]
     }

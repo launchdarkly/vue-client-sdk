@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ldInit, useLdFlag } from '../src'
+import { ldInit, useLDFlag } from '../src'
 
 // Set clientSideID to your LaunchDarkly client-side ID
 const clientSideID = ''
@@ -13,7 +13,7 @@ if (!clientSideID) {
   console.warn('Please edit App.vue to set clientSideID to your LaunchDarkly client-side ID')
 }
 const [ldReady, _ldClient] = ldInit({ clientSideID, user })
-const flagValue = useLdFlag(featureFlagKey, false /* default flag value */)
+const flagValue = useLDFlag(featureFlagKey, false /* default flag value */)
 </script>
 
 <template>

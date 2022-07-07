@@ -1,10 +1,10 @@
 import type { App } from 'vue'
 import { initialize, type LDClient } from 'launchdarkly-js-client-sdk'
 import { LDPlugin, LD_INIT, LD_READY } from '.'
-import { getLdFlag } from './getLdFlag'
+import { getLDFlag } from './getLDFlag'
 
-jest.mock('./getLdFlag')
-const getLdFlagMock = <jest.Mock<typeof getLdFlag>>(<unknown>getLdFlag)
+jest.mock('./getLDFlag')
+const getLdFlagMock = <jest.Mock<typeof getLDFlag>>(<unknown>getLDFlag)
 jest.mock('launchdarkly-js-client-sdk')
 const initializeMock = <jest.Mock<typeof initialize>>(<unknown>initialize)
 const onMock = jest.fn()

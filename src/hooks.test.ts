@@ -1,5 +1,5 @@
 import { inject, readonly, ref } from 'vue'
-import { useLdReady, useLdClient, ldInit, useLdFlag } from '.'
+import { useLDReady, useLDClient, ldInit, useLDFlag } from '.'
 
 jest.mock('vue', () => ({
   ...jest.requireActual('vue'),
@@ -9,14 +9,14 @@ jest.mock('vue', () => ({
 const injectMocked = <jest.Mock<typeof inject>>inject
 
 describe('when plugin has not been loaded', () => {
-  test('useLdReady blows up', () => {
-    expect(useLdReady).toThrowErrorMatchingInlineSnapshot(
+  test('useLDReady blows up', () => {
+    expect(useLDReady).toThrowErrorMatchingInlineSnapshot(
       `"Injection of LD_READY failed. LaunchDarkly plugin may not have been loaded."`,
     )
   })
 
-  test('useLdClient blows up', () => {
-    expect(useLdClient).toThrowErrorMatchingInlineSnapshot(
+  test('useLDClient blows up', () => {
+    expect(useLDClient).toThrowErrorMatchingInlineSnapshot(
       `"Injection of LD_CLIENT failed. LaunchDarkly plugin may not have been loaded."`,
     )
   })
@@ -27,8 +27,8 @@ describe('when plugin has not been loaded', () => {
     )
   })
 
-  test('useLdFlag blows up', () => {
-    expect(() => useLdFlag('test-flag-key')).toThrowErrorMatchingInlineSnapshot(
+  test('useLDFlag blows up', () => {
+    expect(() => useLDFlag('test-flag-key')).toThrowErrorMatchingInlineSnapshot(
       `"Injection of LD_FLAG failed. LaunchDarkly plugin may not have been loaded."`,
     )
   })
@@ -37,7 +37,7 @@ describe('when plugin has not been loaded', () => {
 test('safeInject returns injectee', () => {
   injectMocked.mockImplementationOnce((() => readonly(ref(true))) as jest.Mock)
 
-  const result = useLdReady()
+  const result = useLDReady()
 
   expect(result.value).toBe(true)
 })
