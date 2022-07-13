@@ -4,7 +4,7 @@ All notable changes to the LaunchDarkly Client-side SDK for Vue will be document
 
 ## [1.0.0] - 2022-07-13
 ### Added:
-- Initial release supports Vue 3
+- Initial release
 
 ## [1.0.0] - 2022-06-03
 ### Added:
