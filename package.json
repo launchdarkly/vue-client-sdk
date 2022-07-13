@@ -16,7 +16,6 @@
     "test": "jest",
     "build": "vue-tsc --declaration --emitDeclarationOnly --outDir dist && vite build",
     "clean": "npx rimraf dist",
-    "postinstall": "npm run build",
     "start": "vite",
     "lint": "npx eslint src",
     "check-typescript": "vue-tsc --noEmit"
