@@ -3,6 +3,5 @@ npm-debug.log
 node_modules
 .idea
 .vscode/
-dist
 coverage
 junit.xml
