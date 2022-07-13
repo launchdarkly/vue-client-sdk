@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "vue-tsc --declaration --emitDeclarationOnly --outDir dist && vite build",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "clean": "npx rimraf dist",
     "start": "vite",
     "lint": "npx eslint src",
