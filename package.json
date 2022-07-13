@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "LaunchDarkly Client-side SDK for VueJS",
   "main": "./dist/launchdarkly-vue-client-sdk.umd.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "engines": {
     "npm": ">=8.11.0",
     "node": ">=16.15.1"
@@ -15,6 +15,7 @@
   "scripts": {
     "test": "jest",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
+    "clean": "npx rimraf dist",
     "start": "vite",
     "lint": "npx eslint src",
     "check-typescript": "vue-tsc --noEmit"
@@ -39,7 +40,7 @@
   },
   "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
   "dependencies": {
-    "launchdarkly-js-client-sdk": "^2.22.1"
+    "launchdarkly-js-client-sdk": "2.22.1"
   },
   "devDependencies": {
     "@types/jest": "^28.1.3",
