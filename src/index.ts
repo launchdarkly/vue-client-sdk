@@ -1,6 +1,7 @@
 import { initialize, type LDClient, type LDUser, type LDOptions } from 'launchdarkly-js-client-sdk'
 import { readonly, ref, type InjectionKey, type Ref, type App } from 'vue'
 import { getLDFlag, type FlagRef } from './getLDFlag'
+import { version } from '../package.json'
 export { useLDReady, useLDFlag, ldInit, useLDClient } from './hooks'
 
 export type LDPluginOptions = {
@@ -72,7 +73,8 @@ export const LDPlugin = {
       }
       const user = initOptions.user ?? pluginOptions.user ?? { anonymous: true }
       const options = initOptions.options ?? pluginOptions.options
-      const $ldClient = initialize(clientSideID, user, options)
+      const wrapperOptions = { wrapperName: 'vue-client-sdk', wrapperVersion: version }
+      const $ldClient = initialize(clientSideID, user, { ...wrapperOptions, ...options })
       app.provide(LD_CLIENT, $ldClient)
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
       app.provide(LD_FLAG, getLDFlag(ldReady.value, $ldClient, enableStreaming))
