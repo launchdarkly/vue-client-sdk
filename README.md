@@ -20,7 +20,7 @@ Please note that the Vue SDK has two special requirements in terms of your Launc
 
 ## Learn more
 
-Check out our [documentation](https://docs.launchdarkly.com) for in-depth instructions on configuring and using LaunchDarkly. You can also head straight to the [complete reference guide for this SDK](https://docs.launchdarkly.com/docs/vue-sdk-reference) or our [code-generated API documentation](https://launchdarkly.github.io/vue-client-sdk/).
+Check out our [documentation](https://docs.launchdarkly.com) for in-depth instructions on configuring and using LaunchDarkly. You can also head straight to the [reference guide for this SDK](https://docs.launchdarkly.com/sdk/client-side/vue) or our [code-generated API documentation](https://launchdarkly.github.io/vue-client-sdk/).
 
 This SDK builds upon the [JavaScript SDK](https://github.com/launchdarkly/js-client-sdk), supporting all of the same functionality, but using Vue's Composition API to add providers additional conveniences. While using this SDK you may need to directly interact with the underlying JavaScript SDK. For more information on how to use the JavaScript SDK and its characteristics, see the [SDK's README](https://github.com/launchdarkly/js-client-sdk/blob/main/README.md).
 
