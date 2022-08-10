@@ -1,4 +1,4 @@
-import { onBeforeUnmount, type Ref } from 'vue'
+import { onBeforeUnmount, ref, type Ref } from 'vue'
 import type { LDClient, LDFlagValue } from 'launchdarkly-js-client-sdk'
 import { getLDFlag } from './getLDFlag'
 
@@ -23,7 +23,7 @@ describe('when ld client is not yet ready', () => {
   beforeEach(() => {
     onBeforeUnmountMocked.mockClear()
     ldClient = getMockLdClient('test-flag-value')
-    flagRef = getLDFlag(false, ldClient)('test-flag-key', 'default-flag-value')
+    flagRef = getLDFlag(ref(false), ldClient)('test-flag-key', 'default-flag-value')
   })
 
   test('returns ref to default flag value', () => {
@@ -46,7 +46,7 @@ describe('when ld client is ready', () => {
   beforeEach(() => {
     onBeforeUnmountMocked.mockClear()
     ldClient = getMockLdClient('test-flag-value')
-    flagRef = getLDFlag(true, ldClient)('test-flag-key', 'default-flag-value')
+    flagRef = getLDFlag(ref(true), ldClient)('test-flag-key', 'default-flag-value')
   })
 
   test('returns ref to flag value', () => {
@@ -70,7 +70,7 @@ describe('when streaming is disabled', () => {
     beforeEach(() => {
       onBeforeUnmountMocked.mockClear()
       ldClient = getMockLdClient('test-flag-value')
-      flagRef = getLDFlag(false, ldClient, false)('test-flag-key', 'default-flag-value')
+      flagRef = getLDFlag(ref(false), ldClient, false)('test-flag-key', 'default-flag-value')
     })
 
     test('returns ref to default flag value', () => {
@@ -93,7 +93,7 @@ describe('when streaming is disabled', () => {
     beforeEach(() => {
       onBeforeUnmountMocked.mockClear()
       ldClient = getMockLdClient('test-flag-value')
-      flagRef = getLDFlag(true, ldClient, false)('test-flag-key', 'default-flag-value')
+      flagRef = getLDFlag(ref(true), ldClient, false)('test-flag-key', 'default-flag-value')
     })
 
     test('returns ref to flag value', () => {
@@ -112,7 +112,7 @@ describe('when streaming is disabled', () => {
 
 test('onBeforeUnmount disables change event handler', () => {
   const ldClient = getMockLdClient('test-flag-value')
-  getLDFlag(true, ldClient)('test-flag-key', 'default-flag-value')
+  getLDFlag(ref(true), ldClient)('test-flag-key', 'default-flag-value')
 
   onBeforeUnmountMocked.mock.lastCall[0]()
 
@@ -122,7 +122,7 @@ test('onBeforeUnmount disables change event handler', () => {
 test('ready event updates flag ref', () => {
   const ldClient = getMockLdClient('test-flag-value')
   const ldClientOnMocked = <jest.Mock<typeof ldClient.on>>ldClient.on
-  const flagRef = getLDFlag(false, ldClient)('test-flag-key', 'default-flag-value')
+  const flagRef = getLDFlag(ref(false), ldClient)('test-flag-key', 'default-flag-value')
   expect(flagRef.value).toBe('default-flag-value')
 
   ldClientOnMocked.mock.calls[1][1]()

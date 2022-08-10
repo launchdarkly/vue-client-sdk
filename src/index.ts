@@ -77,7 +77,7 @@ export const LDPlugin = {
       const $ldClient = initialize(clientSideID, user, { ...wrapperOptions, ...options })
       app.provide(LD_CLIENT, $ldClient)
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
-      app.provide(LD_FLAG, getLDFlag(ldReady.value, $ldClient, enableStreaming))
+      app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient, enableStreaming))
       $ldClient.on('ready', () => (ldReady.value = true))
       return [$ldReady, $ldClient]
     }
