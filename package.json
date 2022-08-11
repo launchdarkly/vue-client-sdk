@@ -6,7 +6,8 @@
   "types": "./dist/src/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "!**/*.test.*"
   ],
   "engines": {
     "npm": ">=8.11.0",
