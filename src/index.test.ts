@@ -68,6 +68,7 @@ describe('LDPlugin', () => {
   test('passes enableStreaming option through', () => {
     LDPlugin.install(app, { clientSideID: 'hk47', streaming: false })
 
-    expect(getLdFlagMock).toHaveBeenCalledWith(false, ldClientMock, false)
+    expect(getLdFlagMock).toHaveBeenCalledWith(expect.anything(), ldClientMock, false)
+    expect(getLdFlagMock.mock.calls[0][0]).toHaveProperty('value', false)
   })
 })
