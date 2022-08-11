@@ -1302,8 +1302,9 @@ function un(e2, n2) {
   };
   return window.addEventListener("beforeunload", c2), window.addEventListener("unload", c2), i2;
 }
-const getLDFlag = (isLdReady, $ldClient, enableStreaming = true) => {
+const getLDFlag = (ldReady, $ldClient, enableStreaming = true) => {
   return function ldFlag(flagKey, defaultFlagValue) {
+    const isLdReady = ldReady.value;
     const flagValue = isLdReady ? $ldClient.variation(flagKey, defaultFlagValue) : defaultFlagValue;
     const flagRef = ref(flagValue);
     if (!enableStreaming) {
@@ -1358,7 +1359,7 @@ const LDPlugin = {
       const $ldClient = un(clientSideID, user, __spreadValues(__spreadValues({}, wrapperOptions), options));
       app.provide(LD_CLIENT, $ldClient);
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true;
-      app.provide(LD_FLAG, getLDFlag(ldReady.value, $ldClient, enableStreaming));
+      app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient, enableStreaming));
       $ldClient.on("ready", () => ldReady.value = true);
       return [$ldReady, $ldClient];
     };
