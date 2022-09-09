@@ -6,13 +6,13 @@ Below, you'll find the basic build procedure. For more comprehensive instruction
 
 ## Build instructions
 
-1. Edit `main.js` and set the value of `clientSideID` to your LaunchDarkly client-side ID. If there is an existing boolean feature flag in your LaunchDarkly project that you want to evaluate, edit `Feature.vue` and set `featureFlagKey` to the flag key.
+1. Edit `App.vue` and set the value of `clientSideID` to your LaunchDarkly client-side ID. If there is an existing boolean feature flag in your LaunchDarkly project that you want to evaluate, edit `Feature.vue` and set `featureFlagKey` to the flag key.
 
 ```
-// in main.js
+// in App.vue
 const clientSideID = 'myClientSideID'
 
-// in Feature.vue
+// in App.vue
 const featureFlagKey = 'my-boolean-flag'
 
 ```
