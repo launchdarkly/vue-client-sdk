@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
   "dependencies": {
-    "launchdarkly-js-client-sdk": "2.22.1"
+    "launchdarkly-js-client-sdk": "2.23.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.3",
