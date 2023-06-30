@@ -11,7 +11,7 @@ module.exports = {
     'test-types.ts'
   ],
   name: `LaunchDarkly Vue SDK (${version})`,
-  readme: 'none',                // don't add a home page with a copy of README.md
+  readme: 'none', // don't add a home page with a copy of README.md
   entryPoints: "/tmp/project-releaser/project/src/index.ts",
   entryPointStrategy: "expand"
 };
