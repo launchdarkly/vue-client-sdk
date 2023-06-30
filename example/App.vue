@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ldInit, useLDFlag } from '../src'
+import { ldInit, useLDFlag, LD_FLAG } from '../src'
 
 // Set clientSideID to your LaunchDarkly client-side ID
 const clientSideID = 'CLIENT-SIDE-ID'
 
 // Set up the context properties. This context should appear on your LaunchDarkly
 // contexts dashboard soon after you run the demo.
-const context = { kind:'organization', key: 'org-key-1', name: 'Pet Supplies' }
+const context = { kind:'user', key: 'example-context-key', name: 'Sandy' }
 
 // Set featureFlagKey to the feature flag key you want to evaluate
-const featureFlagKey = 'dev-test-flag'
+const featureFlagKey = 'my-boolean-flag'
 
 if (!clientSideID) {
   console.warn('Please edit App.vue to set clientSideID to your LaunchDarkly client-side ID')

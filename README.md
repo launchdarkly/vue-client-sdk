@@ -8,7 +8,7 @@
 
 ## Supported Vue versions
 
-This SDK only supports >= Vue 3.2.
+This SDK supports Vue 3.2 and newer versions.
 
 Additionally, refer to the [JavaScript SDK README](https://github.com/launchdarkly/js-client-sdk#browser-compatibility) to learn more about browser compatibility.
 
