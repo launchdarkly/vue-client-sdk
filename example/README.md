@@ -18,6 +18,7 @@ const featureFlagKey = 'my-boolean-flag'
 ```
 
 2. On the command line, run:
+
 ```
 npm i
 npm start
@@ -25,4 +26,4 @@ npm start
 
 3. Open `localhost:3000` in your browser.
 
-You should receive the message ”Feature flag ‘<flag key>’ is <true/false> for this user”.
+You should receive the message ”Feature flag ‘<flag key>’ is <true/false> for this context”.
