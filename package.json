@@ -23,7 +23,8 @@
     "clean": "npx rimraf dist",
     "start": "vite",
     "lint": "npx eslint src",
-    "check-typescript": "vue-tsc --noEmit"
+    "check-typescript": "vue-tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
