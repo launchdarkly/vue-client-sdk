@@ -2,6 +2,10 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.0.2] - 2023-07-28
+### Fixed:
+- #23 TypeScript 5 error where declarations could not be found because they are not specified in exports.
+
 ## [2.0.1] - 2023-07-06
 ### Fixed:
 - Fixed missing release artifacts in published npm build.
