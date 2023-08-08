@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/launchdarkly/vue-client-sdk-private.git"
+    "url": "git+https://github.com/launchdarkly/vue-client-sdk.git"
   },
   "author": "LaunchDarkly <team@launchdarkly.com>",
   "license": "Apache-2.0",
@@ -43,9 +43,9 @@
     "bindings"
   ],
   "bugs": {
-    "url": "https://github.com/launchdarkly/vue-client-sdk-private/issues"
+    "url": "https://github.com/launchdarkly/vue-client-sdk/issues"
   },
-  "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
+  "homepage": "https://github.com/launchdarkly/vue-client-sdk#readme",
   "dependencies": {
     "launchdarkly-js-client-sdk": "3.1.3"
   },
