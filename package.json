@@ -1,6 +1,6 @@
 {
   "name": "launchdarkly-vue-client-sdk",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "LaunchDarkly Client-side SDK for VueJS",
   "main": "./dist/launchdarkly-vue-client-sdk.umd.js",
   "types": "./dist/src/index.d.ts",
@@ -14,14 +14,9 @@
     "node": ">=16.15.1"
   },
   "exports": {
-    "import": {
-      "default": "./dist/launchdarkly-vue-client-sdk.es.js",
-      "types": "./dist/src/index.d.ts"
-    },
-    "require": {
-      "default": "./dist/launchdarkly-vue-client-sdk.umd.js",
-      "types": "./dist/src/index.d.ts"
-    }
+    "types": "./dist/src/index.d.ts",
+    "require": "./dist/launchdarkly-vue-client-sdk.umd.js",
+    "import": "./dist/launchdarkly-vue-client-sdk.es.js"
   },
   "scripts": {
     "test": "jest",
@@ -34,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/launchdarkly/vue-client-sdk-private.git"
+    "url": "git+https://github.com/launchdarkly/vue-client-sdk.git"
   },
   "author": "LaunchDarkly <team@launchdarkly.com>",
   "license": "Apache-2.0",
@@ -48,9 +43,9 @@
     "bindings"
   ],
   "bugs": {
-    "url": "https://github.com/launchdarkly/vue-client-sdk-private/issues"
+    "url": "https://github.com/launchdarkly/vue-client-sdk/issues"
   },
-  "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
+  "homepage": "https://github.com/launchdarkly/vue-client-sdk#readme",
   "dependencies": {
     "launchdarkly-js-client-sdk": "3.1.3"
   },
