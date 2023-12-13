@@ -20,8 +20,7 @@ const featureFlagKey = 'my-boolean-flag'
 2. On the command line, run:
 
 ```
-npm i
-npm start
+yarn && yarn start
 ```
 
 3. Open `localhost:3000` in your browser.
