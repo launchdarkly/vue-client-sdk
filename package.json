@@ -13,6 +13,7 @@
     "npm": ">=8.11.0",
     "node": ">=16.15.1"
   },
+  "type": "module",
   "exports": {
     "types": "./dist/src/index.d.ts",
     "require": "./dist/launchdarkly-vue-client-sdk.umd.js",
@@ -25,7 +26,8 @@
     "start": "vite",
     "lint": "npx eslint src",
     "check-typescript": "vue-tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "link-dev": "./link-dev.sh"
   },
   "repository": {
     "type": "git",
