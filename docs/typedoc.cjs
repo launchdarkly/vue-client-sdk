@@ -5,13 +5,13 @@ if (!version) {
 }
 
 module.exports = {
-  out: '/tmp/project-releaser/project/docs/build/html',
+  out: '../docs/build/html',
   exclude: [
     '**/node_modules/**',
     'test-types.ts'
   ],
   name: `LaunchDarkly Vue SDK (${version})`,
   readme: 'none', // don't add a home page with a copy of README.md
-  entryPoints: "/tmp/project-releaser/project/src/index.ts",
+  entryPoints: "../src/index.ts",
   entryPointStrategy: "expand"
 };
