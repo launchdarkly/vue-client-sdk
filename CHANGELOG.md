@@ -2,6 +2,11 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.1.0] - 2024-03-21
+### Changed:
+- Redact anonymous attributes within feature events
+- Always inline contexts for feature events
+
 ## [2.0.5] - 2024-02-09
 ### Fixed:
 - Added type module to package.json.
