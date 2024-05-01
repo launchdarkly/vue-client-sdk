@@ -2,6 +2,16 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.2.0] - 2024-05-01
+### Added:
+- Added an optional timeout to the `waitForInitialization` method. When a timeout is specified the returned promise will be rejected after the timeout elapses if the client has not finished initializing within that time. When no timeout is specified the returned promise will not be resolved or rejected until the initialization either completes or fails.
+
+### Changed:
+- The track method now validates that the provided metricValue is a number. If a metric value is provided, and it is not a number, then a warning will be logged.
+
+### Fixed:
+- Fixed the documentation for `evaluationReasons` for the `identify` method.
+
 ## [2.1.0] - 2024-03-21
 ### Changed:
 - Redact anonymous attributes within feature events
