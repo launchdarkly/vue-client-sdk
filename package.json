@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/launchdarkly/vue-client-sdk#readme",
   "dependencies": {
-    "launchdarkly-js-client-sdk": "3.2.0"
+    "launchdarkly-js-client-sdk": "3.3.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.3",
