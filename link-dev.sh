@@ -21,6 +21,6 @@ do
   mkdir -p ${example}/node_modules/launchdarkly-vue-client-sdk/node_modules
   mkdir -p ${example}/node_modules/launchdarkly-vue-client-sdk/dist
   cp package.json ${example}/node_modules/launchdarkly-vue-client-sdk/package.json
-  cp -r node_modules/ ${example}/node_modules/launchdarkly-vue-client-sdk/node_modules/
-  cp -r dist/ ${example}/node_modules/launchdarkly-vue-client-sdk/dist/
+  cp -r node_modules/* ${example}/node_modules/launchdarkly-vue-client-sdk/node_modules/
+  cp -r dist/* ${example}/node_modules/launchdarkly-vue-client-sdk/dist/
 done
