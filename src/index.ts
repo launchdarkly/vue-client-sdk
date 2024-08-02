@@ -5,6 +5,13 @@ import { version } from '../package.json'
 import { getContextOrUser } from './utils'
 export { useLDReady, useLDFlag, ldInit, useLDClient } from './hooks'
 
+// Export required types from the base SDK.
+export type {
+  LDClient,
+  LDContext,
+  LDOptions,
+}
+
 export type LDPluginOptions = {
   /**
    * Indicates which LaunchDarkly project to use. Must be provided here or in a call to {@link ldInit} for the SDK to work.
