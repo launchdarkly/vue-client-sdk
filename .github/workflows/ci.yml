@@ -36,3 +36,8 @@ jobs:
         run: npm run lint
       - name: Doc
         run: npm run doc
+
+      - name: Install example
+        run: cd example && npm i
+      - name: Build Example
+        run: cd example && npm run build
