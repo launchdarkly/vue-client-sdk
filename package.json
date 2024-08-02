@@ -14,6 +14,7 @@
     "node": ">=16.15.1"
   },
   "type": "module",
+  "module": "./dist/launchdarkly-vue-client-sdk.es.js",
   "exports": {
     "types": "./dist/src/index.d.ts",
     "require": "./dist/launchdarkly-vue-client-sdk.umd.js",
