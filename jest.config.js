@@ -3,5 +3,5 @@ export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
   collectCoverage: true,
-  reporters: ['default', 'jest-junit'],
+  reporters: ['default'],
 };
