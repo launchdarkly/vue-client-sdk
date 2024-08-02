@@ -7,7 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'launchdarkly-vue-client-sdk'
+      name: 'launchdarkly-vue-client-sdk',
+      fileName: (format) => `launchdarkly-vue-client-sdk.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],

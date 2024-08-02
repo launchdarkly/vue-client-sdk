@@ -14,6 +14,7 @@
     "node": ">=16.15.1"
   },
   "type": "module",
+  "module": "./dist/launchdarkly-vue-client-sdk.es.js",
   "exports": {
     "types": "./dist/src/index.d.ts",
     "require": "./dist/launchdarkly-vue-client-sdk.umd.js",
@@ -50,7 +51,7 @@
   },
   "homepage": "https://github.com/launchdarkly/vue-client-sdk#readme",
   "dependencies": {
-    "launchdarkly-js-client-sdk": "3.3.0"
+    "launchdarkly-js-client-sdk": "3.4.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
