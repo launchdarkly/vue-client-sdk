@@ -2,6 +2,13 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.2.1](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.2.0...launchdarkly-vue-client-sdk-v2.2.1) (2024-08-05)
+
+
+### Bug Fixes
+
+* Re-export common types like LDContext. ([#44](https://github.com/launchdarkly/vue-client-sdk/issues/44)) ([f2b5603](https://github.com/launchdarkly/vue-client-sdk/commit/f2b56035fb7a8388f220a467d905275c7ee20edc))
+
 ## [2.2.0] - 2024-05-01
 ### Added:
 - Added an optional timeout to the `waitForInitialization` method. When a timeout is specified the returned promise will be rejected after the timeout elapses if the client has not finished initializing within that time. When no timeout is specified the returned promise will not be resolved or rejected until the initialization either completes or fails.
