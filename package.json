@@ -1,6 +1,6 @@
 {
   "name": "launchdarkly-vue-client-sdk",
-  "version": "1.2.1",
+  "version": "2.2.2",
   "description": "LaunchDarkly Client-side SDK for VueJS",
   "main": "./dist/launchdarkly-vue-client-sdk.umd.js",
   "types": "./dist/src/index.d.ts",
@@ -13,21 +13,27 @@
     "npm": ">=8.11.0",
     "node": ">=16.15.1"
   },
+  "type": "module",
+  "module": "./dist/launchdarkly-vue-client-sdk.es.js",
   "exports": {
-    "import": "./dist/launchdarkly-vue-client-sdk.es.js",
-    "require": "./dist/launchdarkly-vue-client-sdk.umd.js"
+    "types": "./dist/src/index.d.ts",
+    "require": "./dist/launchdarkly-vue-client-sdk.umd.js",
+    "import": "./dist/launchdarkly-vue-client-sdk.es.js"
   },
   "scripts": {
     "test": "jest",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
+    "build": "vue-tsc --noEmit && vite build",
     "clean": "npx rimraf dist",
     "start": "vite",
     "lint": "npx eslint src",
-    "check-typescript": "vue-tsc --noEmit"
+    "check-typescript": "vue-tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "link-dev": "./link-dev.sh",
+    "doc": "typedoc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/launchdarkly/vue-client-sdk-private.git"
+    "url": "git+https://github.com/launchdarkly/vue-client-sdk.git"
   },
   "author": "LaunchDarkly <team@launchdarkly.com>",
   "license": "Apache-2.0",
@@ -41,25 +47,26 @@
     "bindings"
   ],
   "bugs": {
-    "url": "https://github.com/launchdarkly/vue-client-sdk-private/issues"
+    "url": "https://github.com/launchdarkly/vue-client-sdk/issues"
   },
-  "homepage": "https://github.com/launchdarkly/vue-client-sdk-private#readme",
+  "homepage": "https://github.com/launchdarkly/vue-client-sdk#readme",
   "dependencies": {
-    "launchdarkly-js-client-sdk": "2.24.2"
+    "launchdarkly-js-client-sdk": "3.4.0"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.3",
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "@vue/tsconfig": "^0.1.3",
-    "eslint": "^8.18.0",
-    "jest-junit": "^14.0.0",
-    "prettier": "2.7.1",
-    "ts-jest": "^28.0.5",
-    "typescript": "~4.5.4",
-    "vite": "^2.9.9",
-    "vue-tsc": "^0.38.1"
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typedoc": "^0.26.5",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vite-plugin-dts": "^4.0.0-beta.2",
+    "vue": "^3.2.36",
+    "vue-tsc": "^2.0.29"
   },
   "peerDependencies": {
     "vue": "^3.2.36"

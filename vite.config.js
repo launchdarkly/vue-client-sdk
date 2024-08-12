@@ -1,13 +1,14 @@
-import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [dts(), vue()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'launchdarkly-vue-client-sdk'
+      entry: 'src/index.ts',
+      name: 'launchdarkly-vue-client-sdk',
+      fileName: (format) => `launchdarkly-vue-client-sdk.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],

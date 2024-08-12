@@ -6,3 +6,6 @@ node_modules
 coverage
 junit.xml
 package-lock.json
+dist
+docs/
+yarn.lock
