@@ -1,5 +1,7 @@
 # LaunchDarkly Client-side SDK for VueJS
 
+[![Build and Test](https://github.com/launchdarkly/vue-client-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/launchdarkly/vue-client-sdk/actions/workflows/ci.yml)
+
 ## LaunchDarkly overview
 
 [LaunchDarkly](https://www.launchdarkly.com) is a feature management platform that serves trillions of feature flags daily to help teams build better software, faster. [Get started](https://docs.launchdarkly.com/home/getting-started) using LaunchDarkly today!
