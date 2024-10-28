@@ -4,6 +4,7 @@ import { getLDFlag, type FlagRef } from './getLDFlag'
 import { version } from '../package.json'
 import { getContextOrUser } from './utils'
 export { useLDReady, useLDFlag, ldInit, useLDClient } from './hooks'
+export { launchDarklyGuard } from './guards'
 
 // Export required types from the base SDK.
 export type {
@@ -76,6 +77,16 @@ export const LD_CLIENT = Symbol() as InjectionKey<LDClient>
 export const LD_FLAG = Symbol() as InjectionKey<<T>(flagKey: string, defaultFlagValue?: T | undefined) => FlagRef<T>>
 
 /**
+ * Will hold the LaunchDarkly instance.
+ */
+export const launchDarklyClient = ref() as Ref<LDClient>
+
+/**
+ * Will hold the LaunchDarkly readiness.
+ */
+export const launchDarklyReady = ref(false) as Ref<boolean>
+
+/**
  * Vue plugin wrapper for the LaunchDarkly JavaScript SDK.
  *
  * If provided with a clientSideID will initialize the LaunchDarkly client automatically (unless `deferInitialization` is true).
@@ -104,7 +115,15 @@ export const LDPlugin = {
       const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
       app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient, enableStreaming))
 
-      $ldClient.on('ready', () => (ldReady.value = true))
+      // On Launch Darkly client ready
+      $ldClient.on('ready', () => {
+        ldReady.value = true
+        launchDarklyReady.value = true
+      })
+
+      // Launch Darkly client instance assignation
+      launchDarklyClient.value =  $ldClient
+
       return [$ldReady, $ldClient]
     }
 
