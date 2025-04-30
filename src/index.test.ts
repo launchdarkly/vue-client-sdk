@@ -26,6 +26,7 @@ describe('LDPlugin', () => {
     provideMock.mockClear()
     onMock.mockClear()
     getLdFlagMock.mockClear()
+    initializeMock.mockClear()
   })
 
   test('throws if clientSideID is not provided', () => {
@@ -65,21 +66,43 @@ describe('LDPlugin', () => {
     expect($ldReady.value).toBe(true)
   })
 
-  test('defaults to streaming if not provided', () => {
+  test('streaming defaults to undefined if not provided', () => {
     LDPlugin.install(app, { clientSideID: 'hk47' })
 
-    expect(initializeMock).toHaveBeenCalledWith(expect.anything(), expect.anything(), expect.objectContaining({ streaming: true }))
-  });
-
-  test('passes streaming option through', () => {
-    LDPlugin.install(app, { clientSideID: 'hk47', streaming: false })
-
-    expect(initializeMock).toHaveBeenCalledWith(expect.anything(), expect.anything(), expect.objectContaining({ streaming: false }))
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.not.objectContaining({ streaming: expect.anything() }),
+    )
   })
 
-  test('overrides streaming if provided in options', () => {
+  test('passes streaming option through from plugin options', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47', streaming: false })
+
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.objectContaining({ streaming: false }),
+    )
+  })
+
+  test('passes streaming option through from client options', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47', options: { streaming: false } })
+
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.objectContaining({ streaming: false }),
+    )
+  })
+
+  test('streaming option from client options overrides plugin options', () => {
     LDPlugin.install(app, { clientSideID: 'hk47', streaming: false, options: { streaming: true } })
 
-    expect(initializeMock).toHaveBeenCalledWith(expect.anything(), expect.anything(), expect.objectContaining({ streaming: false }))
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.objectContaining({ streaming: true }),
+    )
   })
 })
