@@ -32,6 +32,7 @@ export type LDPluginOptions = {
 
   /**
    * Enables or disables automatically subscribing to live updates to flags referenced using {@link useLDFlag}.
+   * This value will always override the `streaming` property if it is provided in `options`.
    *
    * @defaultValue `true`
    */
@@ -96,13 +97,16 @@ export const LDPlugin = {
 
       const context = getContextOrUser(initOptions) ??
         getContextOrUser(pluginOptions) ?? { anonymous: true, kind: 'user' }
-      const options = initOptions.options ?? pluginOptions.options
+      const streaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
+      const options = {
+        ...(initOptions.options ?? pluginOptions.options),
+        streaming,
+      }
       const wrapperOptions = { wrapperName: 'vue-client-sdk', wrapperVersion: version }
       const $ldClient = initialize(clientSideID, context, { ...wrapperOptions, ...options })
 
       app.provide(LD_CLIENT, $ldClient)
-      const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
-      app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient, enableStreaming))
+      app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient))
 
       $ldClient.on('ready', () => (ldReady.value = true))
       return [$ldReady, $ldClient]

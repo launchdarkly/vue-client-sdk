@@ -65,10 +65,21 @@ describe('LDPlugin', () => {
     expect($ldReady.value).toBe(true)
   })
 
-  test('passes enableStreaming option through', () => {
+  test('defaults to streaming if not provided', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47' })
+
+    expect(initializeMock).toHaveBeenCalledWith(expect.anything(), expect.anything(), expect.objectContaining({ streaming: true }))
+  });
+
+  test('passes streaming option through', () => {
     LDPlugin.install(app, { clientSideID: 'hk47', streaming: false })
 
-    expect(getLdFlagMock).toHaveBeenCalledWith(expect.anything(), ldClientMock, false)
-    expect(getLdFlagMock.mock.calls[0][0]).toHaveProperty('value', false)
+    expect(initializeMock).toHaveBeenCalledWith(expect.anything(), expect.anything(), expect.objectContaining({ streaming: false }))
+  })
+
+  test('overrides streaming if provided in options', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47', streaming: false, options: { streaming: true } })
+
+    expect(initializeMock).toHaveBeenCalledWith(expect.anything(), expect.anything(), expect.objectContaining({ streaming: false }))
   })
 })
