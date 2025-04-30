@@ -62,54 +62,6 @@ describe('when ld client is ready', () => {
   })
 })
 
-describe('when streaming is disabled', () => {
-  describe('and ld is not yet ready', () => {
-    let ldClient: LDClient
-    let flagRef: Readonly<Ref<string>>
-
-    beforeEach(() => {
-      onBeforeUnmountMocked.mockClear()
-      ldClient = getMockLdClient('test-flag-value')
-      flagRef = getLDFlag(ref(false), ldClient, false)('test-flag-key', 'default-flag-value')
-    })
-
-    test('returns ref to default flag value', () => {
-      expect(flagRef.value).toBe('default-flag-value')
-    })
-
-    test('does not set up event handlers', () => {
-      expect(ldClient.on).not.toHaveBeenCalled()
-    })
-
-    test('does not set up onBeforeUnmount handler', () => {
-      expect(onBeforeUnmount).not.toHaveBeenCalled()
-    })
-  })
-
-  describe('and ld is ready', () => {
-    let ldClient: LDClient
-    let flagRef: Readonly<Ref<string>>
-
-    beforeEach(() => {
-      onBeforeUnmountMocked.mockClear()
-      ldClient = getMockLdClient('test-flag-value')
-      flagRef = getLDFlag(ref(true), ldClient, false)('test-flag-key', 'default-flag-value')
-    })
-
-    test('returns ref to flag value', () => {
-      expect(flagRef.value).toBe('test-flag-value')
-    })
-
-    test('does not set up event handlers', () => {
-      expect(ldClient.on).not.toHaveBeenCalled()
-    })
-
-    test('does not set up onBeforeUnmount handler', () => {
-      expect(onBeforeUnmount).not.toHaveBeenCalled()
-    })
-  })
-})
-
 test('onBeforeUnmount disables change event handler', () => {
   const ldClient = getMockLdClient('test-flag-value')
   getLDFlag(ref(true), ldClient)('test-flag-key', 'default-flag-value')

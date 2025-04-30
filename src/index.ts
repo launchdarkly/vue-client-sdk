@@ -31,9 +31,15 @@ export type LDPluginOptions = {
   user?: LDContext
 
   /**
-   * Enables or disables automatically subscribing to live updates to flags referenced using {@link useLDFlag}.
+   * Whether or not to open a streaming connection to LaunchDarkly for live flag updates.
    *
-   * @defaultValue `true`
+   * If this is true, the client will always attempt to maintain a streaming connection; if false,
+   * it never will. If you leave the value undefined (the default), the client will open a streaming
+   * connection for live updates to flags referenced using {@link useLDFlag}.
+   *
+   * Note that if `streaming` is provided in `options`, it will take precedence.
+   *
+   * @defaultValue `undefined`
    */
   streaming?: boolean
 
@@ -96,13 +102,17 @@ export const LDPlugin = {
 
       const context = getContextOrUser(initOptions) ??
         getContextOrUser(pluginOptions) ?? { anonymous: true, kind: 'user' }
-      const options = initOptions.options ?? pluginOptions.options
+
+      const streaming = initOptions.streaming ?? pluginOptions.streaming
+      const options = {
+        ...(streaming !== undefined ? { streaming } : {}),
+        ...(initOptions.options ?? pluginOptions.options),
+      }
       const wrapperOptions = { wrapperName: 'vue-client-sdk', wrapperVersion: version }
       const $ldClient = initialize(clientSideID, context, { ...wrapperOptions, ...options })
 
       app.provide(LD_CLIENT, $ldClient)
-      const enableStreaming = pluginOptions.streaming === false || initOptions.streaming === false ? false : true
-      app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient, enableStreaming))
+      app.provide(LD_FLAG, getLDFlag(ldReady, $ldClient))
 
       $ldClient.on('ready', () => (ldReady.value = true))
       return [$ldReady, $ldClient]

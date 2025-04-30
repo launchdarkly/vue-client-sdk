@@ -26,6 +26,7 @@ describe('LDPlugin', () => {
     provideMock.mockClear()
     onMock.mockClear()
     getLdFlagMock.mockClear()
+    initializeMock.mockClear()
   })
 
   test('throws if clientSideID is not provided', () => {
@@ -65,10 +66,43 @@ describe('LDPlugin', () => {
     expect($ldReady.value).toBe(true)
   })
 
-  test('passes enableStreaming option through', () => {
+  test('streaming defaults to undefined if not provided', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47' })
+
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.not.objectContaining({ streaming: expect.anything() }),
+    )
+  })
+
+  test('passes streaming option through from plugin options', () => {
     LDPlugin.install(app, { clientSideID: 'hk47', streaming: false })
 
-    expect(getLdFlagMock).toHaveBeenCalledWith(expect.anything(), ldClientMock, false)
-    expect(getLdFlagMock.mock.calls[0][0]).toHaveProperty('value', false)
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.objectContaining({ streaming: false }),
+    )
+  })
+
+  test('passes streaming option through from client options', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47', options: { streaming: false } })
+
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.objectContaining({ streaming: false }),
+    )
+  })
+
+  test('streaming option from client options overrides plugin options', () => {
+    LDPlugin.install(app, { clientSideID: 'hk47', streaming: false, options: { streaming: true } })
+
+    expect(initializeMock).toHaveBeenCalledWith(
+      'hk47',
+      expect.anything(),
+      expect.objectContaining({ streaming: true }),
+    )
   })
 })
