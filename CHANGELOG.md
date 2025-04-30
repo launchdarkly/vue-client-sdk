@@ -2,6 +2,13 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.3.1](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.3.0...launchdarkly-vue-client-sdk-v2.3.1) (2025-04-30)
+
+
+### Bug Fixes
+
+* Fix incorrect flag update handling when streaming is disabled ([#55](https://github.com/launchdarkly/vue-client-sdk/issues/55)) ([c544ae4](https://github.com/launchdarkly/vue-client-sdk/commit/c544ae41ad8b53ea6417756f6c21f18f0c7f1827))
+
 ## [2.3.0](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.2.2...launchdarkly-vue-client-sdk-v2.3.0) (2024-10-18)
 
 
