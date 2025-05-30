@@ -2,6 +2,16 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.4.0](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.3.1...launchdarkly-vue-client-sdk-v2.4.0) (2025-05-29)
+
+
+### Features
+
+* Add hooks support. ([f4a9aef](https://github.com/launchdarkly/vue-client-sdk/commit/f4a9aef415ddb45ef5a0ab46e7ce443d095b0079))
+* Add per-context summary events. ([f4a9aef](https://github.com/launchdarkly/vue-client-sdk/commit/f4a9aef415ddb45ef5a0ab46e7ce443d095b0079))
+* Add plugin support. ([f4a9aef](https://github.com/launchdarkly/vue-client-sdk/commit/f4a9aef415ddb45ef5a0ab46e7ce443d095b0079))
+* Inline contexts in custom events. ([f4a9aef](https://github.com/launchdarkly/vue-client-sdk/commit/f4a9aef415ddb45ef5a0ab46e7ce443d095b0079))
+
 ## [2.3.1](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.3.0...launchdarkly-vue-client-sdk-v2.3.1) (2025-04-30)
 
 
