@@ -1,6 +1,6 @@
 {
   "name": "launchdarkly-vue-client-sdk",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "LaunchDarkly Client-side SDK for VueJS",
   "main": "./dist/launchdarkly-vue-client-sdk.umd.js",
   "types": "./dist/src/index.d.ts",
