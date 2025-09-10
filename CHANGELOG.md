@@ -2,6 +2,15 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.5.0](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.4.1...launchdarkly-vue-client-sdk-v2.5.0) (2025-09-10)
+
+
+### Features
+
+* Add experimental debug override functionality. ([7255aa7](https://github.com/launchdarkly/vue-client-sdk/commit/7255aa725e6d9e8af66cebaa8216d1994aababe6))
+* Add experimental debug override functionality. ([a1f56ef](https://github.com/launchdarkly/vue-client-sdk/commit/a1f56efeb124a001a2917afa52da0cab348a8b61))
+* Add experimental debug override functionality. ([#61](https://github.com/launchdarkly/vue-client-sdk/issues/61)) ([7255aa7](https://github.com/launchdarkly/vue-client-sdk/commit/7255aa725e6d9e8af66cebaa8216d1994aababe6))
+
 ## [2.4.1](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.4.0...launchdarkly-vue-client-sdk-v2.4.1) (2025-05-30)
 
 
