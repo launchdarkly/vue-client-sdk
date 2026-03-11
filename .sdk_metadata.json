@@ -7,7 +7,10 @@
       "languages": [
         "JavaScript", "TypeScript"
       ],
-      "wrapperNames": ["vue-client-sdk"]
+      "wrapperNames": ["vue-client-sdk"],
+      "releases": {
+        "tag-prefix": "launchdarkly-vue-client-sdk-"
+      }
     }
   }
 }
