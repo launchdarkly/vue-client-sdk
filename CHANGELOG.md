@@ -2,6 +2,13 @@
 
 All notable changes to the LaunchDarkly Client-side SDK for Vue will be documented in this file. See also the [JavaScript SDK changelog](https://github.com/launchdarkly/js-client-sdk/blob/main/CHANGELOG.md), since the Vue SDK inherits all of the underlying functionality of the JavaScript SDK; this file covers only changes that are specific to the Vue interface. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.5.1](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.5.0...launchdarkly-vue-client-sdk-v2.5.1) (2026-05-29)
+
+
+### Bug Fixes
+
+* update js-client-sdk to latest ([#70](https://github.com/launchdarkly/vue-client-sdk/issues/70)) ([2a4d5e4](https://github.com/launchdarkly/vue-client-sdk/commit/2a4d5e401c2c1a37d3b506d2a4744e42cd7ada6f))
+
 ## [2.5.0](https://github.com/launchdarkly/vue-client-sdk/compare/launchdarkly-vue-client-sdk-v2.4.1...launchdarkly-vue-client-sdk-v2.5.0) (2026-03-17)
 
 
