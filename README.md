@@ -1,3 +1,10 @@
+# Use [@launchdarkly/vue-client-sdk](https://www.npmjs.com/package/@launchdarkly/vue-client-sdk) instead of this package.
+
+The `launchdarkly-vue-client-sdk` project has been renamed `@launchdarkly/vue-client-sdk` and all future releases will be made from the
+[new repository](https://github.com/launchdarkly/js-core/tree/main/packages/sdk/vue). Please consider upgrading and filing issues
+and requests in that repository's [issue tracker](https://github.com/launchdarkly/js-core/issues).
+# ☝️☝️☝️☝️☝️☝️
+
 # LaunchDarkly Client-side SDK for VueJS
 
 [![Build and Test](https://github.com/launchdarkly/vue-client-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/launchdarkly/vue-client-sdk/actions/workflows/ci.yml)
