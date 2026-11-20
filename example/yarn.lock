@@ -2580,10 +2580,10 @@ core-js-compat@^3.31.0, core-js-compat@^3.33.1, core-js-compat@^3.8.3:
   dependencies:
     browserslist "^4.22.2"
 
-core-js@^3.8.3:
-  version "3.34.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.34.0.tgz#5705e6ad5982678612e96987d05b27c6c7c274a5"
-  integrity sha512-aDdvlDder8QmY91H88GzNi9EtQi2TjvQhpCX6B1v/dAZHU1AuLgHvRh54RiOerpEhEW46Tkf+vgAViB/CWC0ag==
+core-js@^3.51.0, core-js@^3.8.3:
+  version "3.51.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.51.0.tgz#9a7b197159ab83173b50efbe0c4846bec94b3abb"
+  integrity sha512-7bDKx/5jm5MxzsXxc93g6Z2+4ZsuT/MddrfRmTDJNAkWsYWHU8EVNEsBiIEWnMAMCHMmRfUEjkuo3jeNBOIHRw==
 
 core-util-is@~1.0.0:
   version "1.0.3"
