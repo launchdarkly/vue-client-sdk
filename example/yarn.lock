@@ -4170,29 +4170,28 @@ launch-editor@^2.2.1, launch-editor@^2.6.0, launch-editor@^2.6.1:
     picocolors "^1.1.1"
     shell-quote "^1.10.0"
 
-launchdarkly-js-client-sdk@3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/launchdarkly-js-client-sdk/-/launchdarkly-js-client-sdk-3.1.3.tgz#e046439f0e4f0bfd6d38b9eaa4420a6e40ffc0c7"
-  integrity sha512-/JR/ri8z3bEj9RFTTKDjd+con4F1MsWUea1MmBDtFj4gDA0l9NDm1KzhMKiIeoBdmB2rSaeFYe4CaYOEp8IryA==
+launchdarkly-js-client-sdk@3.9.5:
+  version "3.9.5"
+  resolved "https://registry.yarnpkg.com/launchdarkly-js-client-sdk/-/launchdarkly-js-client-sdk-3.9.5.tgz#c08b6eff609d2ebb0f15790c6c6668d2ec516dac"
+  integrity sha512-VYIqarCd1tOt8C701Eu2TQNCfsd/mMw4Eu+yi/C4yT3nuQLd614hbPOGbJrpB3WFVWmePEgcPeLxYenj4nCs+A==
   dependencies:
     escape-string-regexp "^4.0.0"
-    launchdarkly-js-sdk-common "5.0.3"
+    launchdarkly-js-sdk-common "5.8.3"
 
-launchdarkly-js-sdk-common@5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/launchdarkly-js-sdk-common/-/launchdarkly-js-sdk-common-5.0.3.tgz#345f899f5779be8b03d6599978c855eb838d8b7f"
-  integrity sha512-wKG8UsVbPVq8+7eavgAm5CVmulQWN6Ddod2ZoA3euZ1zPvJPwIQ2GrOYaCJr3cFrrMIX+nQyBJHBHYxUAPcM+Q==
+launchdarkly-js-sdk-common@5.8.3:
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/launchdarkly-js-sdk-common/-/launchdarkly-js-sdk-common-5.8.3.tgz#53e2316b2583b60ed6a9d626a4368f099cf3f0e1"
+  integrity sha512-IYf022xU3x3UMESumqbkkbPi2F4qEkZt+MEW2lwNKDuekWE6s/rm2PHF0el6gZKtDP5qn84w2UtvPydsnIttTA==
   dependencies:
     base64-js "^1.3.0"
     fast-deep-equal "^2.0.1"
-    uuid "^8.0.0"
 
-launchdarkly-vue-client-sdk@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/launchdarkly-vue-client-sdk/-/launchdarkly-vue-client-sdk-2.0.4.tgz#087e8e07573cc887d062e30b7fb698e74073d20b"
-  integrity sha512-vd0MxrMOadEHwLCEsTorUZKhZ99jt6OE+W2mC/weo7ouqFAIOCSg6qD8JMSfvNs7K4y03qmW634NGuIKha9KNw==
+launchdarkly-vue-client-sdk@2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/launchdarkly-vue-client-sdk/-/launchdarkly-vue-client-sdk-2.5.3.tgz#0f5eb9eb595e8d3de286d3e00a0787c693ffcc94"
+  integrity sha512-rfniTBXmzZBcoCJidIhI4ZmjxyuoiJv+tiQOdyX7VyOzMzf61ciuqUNikZ56rwtD8ZT8NimLRgvL49tv902A7g==
   dependencies:
-    launchdarkly-js-client-sdk "3.1.3"
+    launchdarkly-js-client-sdk "3.9.5"
 
 levn@^0.4.1:
   version "0.4.1"
@@ -6135,7 +6134,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
 
-uuid@^8.0.0, uuid@^8.3.2:
+uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
